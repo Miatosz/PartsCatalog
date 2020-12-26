@@ -1,0 +1,46 @@
+@model Product
+
+@{
+    @* ViewBag.Title = "Edycja produktu"; *@
+    Layout = "_AdminLayout";
+}
+
+
+<form asp-action="AddOrEditProduct" method="post">
+
+<input type="hidden" asp-for="ProductId" />
+<div class="form-group">
+    <label asp-for="Name">Produkt</label>
+    <div><span asp-validation-for="Name" class="text-danger"></span></div>
+    <input asp-for="Name" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Description">Opis</label>
+    <div><span asp-validation-for="Description" class="text-danger"></span></div>
+    <textarea asp-for="Description" class="form-control"></textarea>
+</div>
+@* <div class="form-group">
+    <label asp-for="Category">Kategoria</label>
+    <div><span asp-validation-for="Category" class="text-danger"></span></div>
+    <input asp-for="categoryId" class="form-control" />
+</div> *@
+<div class="form-group">
+        <label asp-for="Category">Kategoria</label>
+        <select class="form-control" asp-for="@Model.categoryId" asp-items="ViewBag.Categories"></select>
+        <option value="ViewBag.Categories"></option>
+        </select>
+        @*@<label asp-for="CategoryId">Kategoria</label>
+            <input asp-for="CategoryId" class="form-control" />*@
+    </div>
+    <input asp-for="@Model.categoryId" value=@Html.DropDownList("Categories") type="hidden" />
+    
+<div class="form-group">
+    <label asp-for="Price">Cena</label>
+    <div><span asp-validation-for="Price" class="text-danger"></span></div>
+    <input asp-for="Price" class="form-control" />
+</div>
+<div class="text-center">
+<button class="btn btn-primary" type="submit">Zapisz</button>
+    <a asp-action="AdminHomePage" class="btn btn-secondary">Anuluj</a>
+</div>
+</form>

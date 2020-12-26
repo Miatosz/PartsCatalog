@@ -1,0 +1,49 @@
+@model IEnumerable<Product>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {  
+    <tr>
+      <th scope="row">@item.ProductId</th>
+      <td>@item.Name</td>
+      <td>@item.Description</td>
+      <td>@item.Price</td>
+      <td>@item.Category.Name</td>
+      <td class="text-center">
+            <form asp-action="DeleteProduct" method="post">
+              <a asp-action="AddOrEditProduct" class="btn btn-sm btn-warning" asp-route-productId="@item.ProductId">
+                Edytuj
+              </a>
+            <input type="hidden" name="ProductId" value="@item.ProductId" />
+              <button type="submit" class="btn btn-danger btn-sm">
+                Usuń
+              </button>
+            </form>
+            </td>
+    </tr>
+    }
+    
+  </tbody>
+</table>
+
+
+
+

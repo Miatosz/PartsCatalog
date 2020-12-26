@@ -1,0 +1,100 @@
+@model IEnumerable<IdentityUser>
+
+@{
+  Layout = "_AdminLayout";
+}
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Konta użytkowników</h4></div>
+
+<table class="table table-sm table-bordered">
+  <tr><th>ID</th><th>Nazwa użytkownika</th><th>Adres e-mail</th></tr>
+  @if (Model.Count() == 0)
+  {
+    <tr><td colspan="3" class="text-center">Brak kont użytkowników.</td></tr>
+  }
+  else
+  {
+    foreach (IdentityUser user in Model)
+    {
+      <tr>
+      <td>@user.Id</td>
+      <td>@user.UserName</td>
+      <td>@user.Email</td>
+      <td>
+        <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+          <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@user.Id">Edytuj</a>
+          <button type="submit" class="btn btn-sm btn-danger">Usuń</button>
+        </form>
+      </td>
+      </tr>
+    }
+  }
+</table>
+
+<a class="btn btn-primary" asp-action="Create">Dodaj użytkownika</a>
+
+
+
+
+
+
+@* @model IEnumerable<Client>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Country</th>
+      <th scope="col">City</th>
+      <th scope="col">Street</th>
+      <th scope="col">Line1</th>
+      <th scope="col">Line2</th>
+      <th scope="col">Zip</th>
+      <th scope="col">Telephone</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {  
+    <tr>
+      <th scope="row">@item.ClientId</th>
+      <td>@item.Name</td>
+      <td>@item.Surname</td>
+      <td>@item.Country</td>
+      <td>@item.City</td>
+      <td>@item.Street</td>
+      <td>@item.Line1</td>
+      <td>@item.Line2</td>
+      <td>@item.Zip</td>
+      <td>@item.Telephone</td>
+
+      <td class="text-center">
+            <form asp-action="DeleteClient" method="post">
+              <a asp-action="AddOrEditClient" class="btn btn-sm btn-warning" asp-route-clientId="@item.ClientId">
+                Edytuj
+              </a>
+            <input type="hidden" name="ClientId" value="@item.ClientId" />
+              <button type="submit" class="btn btn-danger btn-sm">
+                Usuń
+              </button>
+            </form>
+            </td>
+    </tr>
+    }
+    
+  </tbody>
+</table>
+
+
+
+ *@

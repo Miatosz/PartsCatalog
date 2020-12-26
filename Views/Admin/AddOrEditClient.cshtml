@@ -1,0 +1,64 @@
+@model Client
+
+@{
+    @* ViewBag.Title = "Edycja produktu"; *@
+    Layout = "_AdminLayout";
+}
+
+
+<form asp-action="AddOrEditClient" method="post">
+
+<input type="hidden" asp-for="ClientId" />
+<div class="form-group">
+    <label asp-for="Name">Imię</label>
+    <div><span asp-validation-for="Name" class="text-danger"></span></div>
+    <input asp-for="Name" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Surname">Nazwisko</label>
+    <div><span asp-validation-for="Surname" class="text-danger"></span></div>
+    <textarea asp-for="Surname" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Country">Kraj</label>
+    <div><span asp-validation-for="Country" class="text-danger"></span></div>
+    <textarea asp-for="Country" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="City">Miasto</label>
+    <div><span asp-validation-for="City" class="text-danger"></span></div>
+    <textarea asp-for="City" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Street">Ulica</label>
+    <div><span asp-validation-for="Street" class="text-danger"></span></div>
+    <textarea asp-for="Street" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Line1">nr domu</label>
+    <div><span asp-validation-for="Line1" class="text-danger"></span></div>
+    <textarea asp-for="Line1" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Line2">nr lokalu</label>
+    <div><span asp-validation-for="Line2" class="text-danger"></span></div>
+    <textarea asp-for="Line2" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Zip">Kod pocztowy</label>
+    <div><span asp-validation-for="Zip" class="text-danger"></span></div>
+    <textarea asp-for="Zip" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label asp-for="Telephone">Telefon</label>
+    <div><span asp-validation-for="Telephone" class="text-danger"></span></div>
+    <textarea asp-for="Telephone" class="form-control"></textarea>
+</div>
+
+   
+
+<div class="text-center">
+<button class="btn btn-primary" type="submit">Zapisz</button>
+    <a asp-action="ListClients" class="btn btn-secondary">Anuluj</a>
+</div>
+</form>

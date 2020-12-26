@@ -1,0 +1,43 @@
+@model IEnumerable<Category>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {  
+    <tr>
+      <th scope="row">@item.CategoryId</th>
+      <td>@item.Name</td>
+      <td class="text-center">
+            <form asp-action="DeleteCategory" method="post">
+              <a asp-action="AddOrEditCategory" class="btn btn-sm btn-warning" asp-route-productId="@item.CategoryId">
+                Edytuj
+              </a>
+            <input type="hidden" name="CategoryId" value="@item.CategoryId" />
+              <button type="submit" class="btn btn-danger btn-sm">
+                Usuń
+              </button>
+            </form>
+            </td>
+    </tr>
+    }
+    
+  </tbody>
+</table>
+
+
+
+

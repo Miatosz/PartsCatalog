@@ -1,0 +1,23 @@
+@model Category
+
+@{
+    ViewBag.Title = "Edycja kategorii";
+    Layout = "_AdminLayout";
+}
+
+
+<form asp-action="AddOrEditCategory" method="post">
+    
+<input type="hidden" asp-for="@Model.CategoryId" />
+
+<div class="form-group">
+    <label asp-for="Name">Category</label>
+    <div><span asp-validation-for="Name" class="text-danger"></span></div>
+    <input asp-for="Name" class="form-control" />
+</div>
+
+<div class="text-center">
+<button class="btn btn-primary" type="submit">Zapisz</button>
+    <a asp-action="ListCategories" class="btn btn-secondary">Anuluj</a>
+</div>
+</form>
