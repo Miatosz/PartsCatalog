@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace PartsCatalog.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext context;
@@ -24,13 +24,13 @@ namespace PartsCatalog.Controllers
         private readonly IProductRepository productRepository;
         private readonly ICategoryRepository categoryRepository;
         private readonly IClientRepository clientRepository;
-        private UserManager<IdentityUser> userManager;
-        private IUserValidator<IdentityUser> userValidator;
-        private IPasswordValidator<IdentityUser> passwordValidator;
-        private IPasswordHasher<IdentityUser> passwordHasher;
+        private UserManager<AppUser> userManager;
+        private IUserValidator<AppUser> userValidator;
+        private IPasswordValidator<AppUser> passwordValidator;
+        private IPasswordHasher<AppUser> passwordHasher;
 
-        public AdminController(IPasswordHasher<IdentityUser> passwordHasher, IPasswordValidator<IdentityUser> passwordValidator,
-                                IUserValidator<IdentityUser> userValidator, UserManager<IdentityUser> userManager, 
+        public AdminController(IPasswordHasher<AppUser> passwordHasher, IPasswordValidator<AppUser> passwordValidator,
+                                IUserValidator<AppUser> userValidator, UserManager<AppUser> userManager, 
                                     ApplicationDbContext context, IClientRepository clientRepository, IProductRepository productRepository,
                                      ICategoryRepository categoryRepository)
         {
@@ -144,9 +144,9 @@ namespace PartsCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser
+                AppUser user = new AppUser
                 {
-                    UserName = model.Login,
+                    UserName = model.Name,
                     Email = model.Email
                 };
 
@@ -170,10 +170,10 @@ namespace PartsCatalog.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
-            IdentityUser identityUser = await userManager.FindByIdAsync(id);
-            if (identityUser != null)
+            AppUser user = await userManager.FindByIdAsync(id);
+            if (user != null)
             {
-                IdentityResult result = await userManager.DeleteAsync(identityUser);
+                IdentityResult result = await userManager.DeleteAsync(user);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("ListClients");
@@ -200,10 +200,11 @@ namespace PartsCatalog.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            IdentityUser user = await userManager.FindByIdAsync(id);
+            AppUser user = await userManager.FindByIdAsync(id);
             
             if (user != null)
-            {
+            {   
+
                 return View(user);
             }
             else
@@ -215,8 +216,8 @@ namespace PartsCatalog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(string id, string email, string password)
         {
-            IdentityUser user = await userManager.FindByIdAsync(id);
-            Console.WriteLine(user.Id);
+            AppUser user = await userManager.FindByIdAsync(id);
+            
             if (user != null)
             {
                 user.Email = email;

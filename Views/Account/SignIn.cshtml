@@ -1,0 +1,67 @@
+@model CreateModel
+
+@* @{
+    Layout = "_Layout";
+} *@
+
+@{
+  ViewBag.Title = "Logowanie";
+  @* Layout = "_Layout"; *@
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Login Page</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }    
+    </style>
+    
+    <!-- Custom styles for this template -->
+    <link href="/css/signin.css" rel="stylesheet">
+  </head>
+
+
+
+
+
+<main class="form-signin">
+<div class="text-danger" asp-validation-summary="All"></div>
+
+
+<div class="bg-primary m-1 p-1"><h4>Sign in</h4></div>
+
+<form asp-action="SignIn" method="post">
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+    <div class="form-group">
+        <label asp-for="Name">login</label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <div><span asp-validation-for="Email" class="text-danger"></span></div>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label id="password" for="password">password</label>
+        <div><span asp-validation-for="Password" class="text-danger"></span></div>
+        <input type="password" name="password" name="password" class="form-control" />
+        
+    </div>
+    <button class="btn btn-primary" type="submit">register</button>
+    <a asp-action="Login" class="btn btn-secondary">cancel</a>
+</form>

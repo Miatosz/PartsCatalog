@@ -1,26 +1,27 @@
-@model IdentityUser
+@model AppUser
 
 @{
     Layout = "_AdminLayout";
 }
-@Model.Id
-<div class="bg-primary m-1 p-1"><h4>Edycja użytkownika</h4></div>
+
+<div class="bg-primary m-1 p-1"><h4>Edit User</h4></div>
 
 <div asp-validation-summary="All" class="text-danger"></div>
 
 <form asp-action="Edit" method="post">
+    <input asp-for="Id" class="form-control" type="hidden" >
     <div class="form-group">
-        <label asp-for="Id">ID</label>
-        <input asp-for="Id" class="form-control" disabled />
+        @* <label asp-for="Id"></label> *@
+        
     </div>
     <div class="form-group">
-        <label asp-for="Email">Adres e-mail</label>
+        <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Password">Hasło</label>
-        <input asp-for="password" class="form-control" />
+        <label for="password">Password</label>
+        <input name="password" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary">Zapisz</button>
-    <a asp-action="ListClients" class="btn btn-secondary">Anuluj</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="ListClients" class="btn btn-secondary">Cancel</a>
 </form>

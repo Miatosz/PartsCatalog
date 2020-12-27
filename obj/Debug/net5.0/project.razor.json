@@ -1,5 +1,5 @@
 {
-  "FilePath": "/home/marcin/Pulpit/PartsCatalog/PartsCatalog.csproj",
+  "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -11384,6 +11384,37 @@
         }
       },
       {
+        "HashCode": 845398857,
+        "Kind": "ITagHelper",
+        "Name": "PartsCatalog.Infrastructure.RoleUsersTagHelper",
+        "AssemblyName": "PartsCatalog",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "td",
+            "Attributes": [
+              {
+                "Name": "identity-role"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "ITagHelper",
+            "Name": "identity-role",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Role"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "PartsCatalog.Infrastructure.RoleUsersTagHelper"
+        }
+      },
+      {
         "HashCode": -58373605,
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper",
@@ -15603,78 +15634,98 @@
   "RootNamespace": "PartsCatalog",
   "Documents": [
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/ListClients.cshtml",
-      "TargetPath": "Views\\Admin\\ListClients.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/User/ListProducts.cshtml",
-      "TargetPath": "Views\\User\\ListProducts.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/AdminHomePage.cshtml",
-      "TargetPath": "Views\\Admin\\AdminHomePage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/ListCategories.cshtml",
-      "TargetPath": "Views\\Admin\\ListCategories.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/Create.cshtml",
-      "TargetPath": "Views\\Admin\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Shared/_AdminLayout.cshtml",
-      "TargetPath": "Views\\Shared\\_AdminLayout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Account/Login.cshtml",
-      "TargetPath": "Views\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/Edit.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/Edit.cshtml",
       "TargetPath": "Views\\Admin\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/AddOrEditClient.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/AdminHomePage.cshtml",
+      "TargetPath": "Views\\Admin\\AdminHomePage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/RoleAdmin/Create.cshtml",
+      "TargetPath": "Views\\RoleAdmin\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Shared/_AdminLayout.cshtml",
+      "TargetPath": "Views\\Shared\\_AdminLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/ListCategories.cshtml",
+      "TargetPath": "Views\\Admin\\ListCategories.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/RoleAdmin/Edit.cshtml",
+      "TargetPath": "Views\\RoleAdmin\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/AddOrEditClient.cshtml",
       "TargetPath": "Views\\Admin\\AddOrEditClient.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Account/AccessDenied.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/User/ListProducts.cshtml",
+      "TargetPath": "Views\\User\\ListProducts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/AccessDenied.cshtml",
       "TargetPath": "Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/AddOrEditCategory.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/Create.cshtml",
+      "TargetPath": "Views\\Admin\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/AddOrEditCategory.cshtml",
       "TargetPath": "Views\\Admin\\AddOrEditCategory.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/test.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/RoleAdmin/Index.cshtml",
+      "TargetPath": "Views\\RoleAdmin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/SignIn.cshtml",
+      "TargetPath": "Views\\Account\\SignIn.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/test.cshtml",
       "TargetPath": "Views\\Admin\\test.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Admin/AddOrEditProduct.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/AddOrEditProduct.cshtml",
       "TargetPath": "Views\\Admin\\AddOrEditProduct.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Admin/ListClients.cshtml",
+      "TargetPath": "Views\\Admin\\ListClients.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/marcin/Pulpit/PartsCatalog/Views/_ViewImports.cshtml",
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],

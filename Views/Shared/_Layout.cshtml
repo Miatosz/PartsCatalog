@@ -23,7 +23,17 @@
 
 <ul class="main-navigation">
   <ul class="nav justify-content-end">
-  <li><a  asp-action="Login" asp-controller="Account">Zaloguj</a></li>
+  <li style="margin-right: 1%;">
+    @if (User.Identity.IsAuthenticated)
+    {
+      <a style="text-align: right;" asp-action="Logout" asp-controller="Account">Wyloguj</a>
+      <div ><small>Zalogowany jako: @User.Identity.Name</small></div>
+    } else
+    {
+      <a  asp-action="Login" asp-controller="Account">Zaloguj</a>
+    }
+
+    </li>
   </ul>
 </ul>
 

@@ -62,7 +62,7 @@
       </li>
     </ul>
   </li>
-  <li><a href="">Clients
+  <li><a href="">Users
     @using (Html.BeginForm("ListClients", "Admin", FormMethod.Post))
         {
           <button type="submit" style="background:transparent; border:none; color:transparent;" ></button>  
@@ -72,13 +72,19 @@
       <li>
         @using (Html.BeginForm("ListClients", "Admin", FormMethod.Post))
         {
-         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">List</p></button></a>
+         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">List users</p></button></a>
         }
       </li>
       <li>
         @using (Html.BeginForm("AddOrEditClient", "Admin", FormMethod.Get))
         {
-         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">Add client</p></button></a>
+         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">Add user</p></button></a>
+        }
+      </li>
+      <li>
+        @using (Html.BeginForm("Index", "RoleAdmin", FormMethod.Get))
+        {
+         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">User Roles</p></button></a>
         }
       </li>
     </ul>
@@ -100,7 +106,17 @@
     </ul>
   </li>
   <ul class="nav justify-content-end">
-  <li><a  asp-action="Logout" asp-controller="Account">Wyloguj</a></li>
+  <li style="margin-right: 1%;">
+    @if (User.Identity.IsAuthenticated)
+    {
+      <a style="text-align: right;"  asp-action="Logout" asp-controller="Account" >Wyloguj</a>
+      <div ><small>Zalogowany jako: @User.Identity.Name</small></div>
+    } else
+    {
+       <a  asp-action="Login" asp-controller="Account">Zaloguj</a>
+    }
+   
+  </li>
 
   </ul>
 </ul>

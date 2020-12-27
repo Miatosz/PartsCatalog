@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PartsCatalog.Models
 {
-    public class AppIdentityDbContext : IdentityDbContext<IdentityUser> {
+    public class AppIdentityDbContext : IdentityDbContext<AppUser> {
 
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
             : base(options) { }
@@ -16,8 +16,8 @@ namespace PartsCatalog.Models
         public static async Task CreateAdminAccount(IServiceProvider serviceProvider,
             IConfiguration configuration) {
 
-            UserManager<IdentityUser> userManager =
-                serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            UserManager<AppUser> userManager =
+                serviceProvider.GetRequiredService<UserManager<AppUser>>();
             RoleManager<IdentityRole> roleManager =
                 serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
@@ -31,7 +31,7 @@ namespace PartsCatalog.Models
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
 
-                IdentityUser user = new IdentityUser {
+                AppUser user = new AppUser {
                     UserName = username,
                     Email = email
                 };

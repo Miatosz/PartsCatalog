@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IPmcDsWk3qkInSr8kS174WBra5017rR2EvzP/KnryUWM/IxMoZiogfQozn3vrNiMLS9dGmOWY0qrnU7BeRE6Dg==",
+  "dgSpecHash": "TdyrfdlCmt1Dzux5U9Wx6vqpb+JBJbwuIz9iskj0lTfcK3LTbJL96AztIlr3nNhHgS31YQueHkcbZtpznyD3Yw==",
   "success": true,
-  "projectFilePath": "/home/marcin/Pulpit/PartsCatalog/PartsCatalog.csproj",
+  "projectFilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
   "expectedPackageFiles": [
     "/home/marcin/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/marcin/.nuget/packages/jquery/3.5.1/jquery.3.5.1.nupkg.sha512",

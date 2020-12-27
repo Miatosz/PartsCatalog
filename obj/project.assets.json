@@ -6457,11 +6457,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/marcin/Pulpit/PartsCatalog/PartsCatalog.csproj",
+      "projectUniqueName": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
       "projectName": "PartsCatalog",
-      "projectPath": "/home/marcin/Pulpit/PartsCatalog/PartsCatalog.csproj",
+      "projectPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
       "packagesPath": "/home/marcin/.nuget/packages/",
-      "outputPath": "/home/marcin/Pulpit/PartsCatalog/obj/",
+      "outputPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/marcin/.nuget/NuGet/NuGet.Config"

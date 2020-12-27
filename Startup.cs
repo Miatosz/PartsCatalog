@@ -31,8 +31,15 @@ namespace PartsCatalog
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlite("Data Source=Identity.db")); 
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>()
+            services.AddIdentity<AppUser, IdentityRole>(opts => 
+            {
+                opts.User.RequireUniqueEmail = true;
+                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<AppIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
@@ -87,7 +94,7 @@ namespace PartsCatalog
             ApplicationDbContext context = app.ApplicationServices
                 .GetRequiredService<ApplicationDbContext>();
             context.Database.Migrate();
-            IdentitySeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
         }
         
     }
