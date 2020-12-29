@@ -36,8 +36,11 @@ Then you can open app in browser on port 5001(https://localhost:5001/)
 * **email:** drelewskiim@gmail.com
 
 ## Screenshots
-![Index page](./images/homePage.PNG)
-![Find Owners](./images/findOwners.PNG)
-![Add New Owner](./images/addNewOwner.PNG)
-![Add Visit](./images/addVisit.PNG)
-![Owner Detail](./images/ownerDetail.PNG)
+![Login page](./images/login.png)
+![List users](./images/listUsers.png)
+![List roles](./images/listRoles.png)
+![List products](./images/listProductUser.png)
+![List categories](./images/listCategories.png)
+![Edit roles](./images/editRoles.png)
+![Cart](./images/cart.png)
+![Add product](./images/addProduct.png)
