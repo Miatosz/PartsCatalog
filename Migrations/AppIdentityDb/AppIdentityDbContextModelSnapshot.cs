@@ -152,8 +152,16 @@ namespace PartsCatalog.Migrations.AppIdentityDb
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -163,10 +171,21 @@ namespace PartsCatalog.Migrations.AppIdentityDb
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Line1")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Line2")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedEmail")
@@ -181,6 +200,7 @@ namespace PartsCatalog.Migrations.AppIdentityDb
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("PhoneNumberConfirmed")
@@ -189,11 +209,23 @@ namespace PartsCatalog.Migrations.AppIdentityDb
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Zip")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

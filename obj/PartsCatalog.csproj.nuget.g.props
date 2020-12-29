@@ -22,5 +22,6 @@
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/home/marcin/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/home/marcin/.nuget/packages/jquery/3.5.1</PkgjQuery>
     <PkgMicrosoft_EntityFrameworkCore_Tools_DotNet Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools_DotNet)' == '' ">/home/marcin/.nuget/packages/microsoft.entityframeworkcore.tools.dotnet/2.1.0-preview1-final</PkgMicrosoft_EntityFrameworkCore_Tools_DotNet>
+    <PkgFontAwesome Condition=" '$(PkgFontAwesome)' == '' ">/home/marcin/.nuget/packages/fontawesome/4.7.0</PkgFontAwesome>
   </PropertyGroup>
 </Project>

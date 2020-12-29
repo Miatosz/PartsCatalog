@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 namespace PartsCatalog.Models
 {
-    public class CreateModel {
+    public class CreateModel : AppUser {
         [Required]
-        public string Name { get; set; }
+        public string Login { get; set; }
         [Required]
-        public string Email { get; set; }
+        public override string Email { get; set; }
         [Required]
         public string Password { get; set; }
+    }
+
+    public class ResetPasswordModel
+    {
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+        public string UserId { get; set; }
+        public string Token { get; set; }
     }
 
     public class LoginModel {

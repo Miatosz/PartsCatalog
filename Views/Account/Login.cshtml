@@ -52,8 +52,9 @@
         <label asp-for="Password"></label>
         <input asp-for="Password" class="form-control" />
     </div>
+    <a asp-action="SendResetPassword" method="get" style="margin-right: 50%;" type="submit"><small>Forgot password</small></a>
     <button class="btn btn-primary" type="submit">Log In</button>
-    <a asp-action="SignIn" class="btn btn-secondary">Sign in</a>
+    <a style="margin-right: 0%;" asp-action="SignIn" class="btn btn-secondary">Sign in</a>
 </form>
 
 

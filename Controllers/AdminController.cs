@@ -146,7 +146,7 @@ namespace PartsCatalog.Controllers
             {
                 AppUser user = new AppUser
                 {
-                    UserName = model.Name,
+                    UserName = model.Login,
                     Email = model.Email
                 };
 

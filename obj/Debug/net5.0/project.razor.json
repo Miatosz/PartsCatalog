@@ -13581,6 +13581,23 @@
         }
       },
       {
+        "HashCode": -1921288464,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__CartSummaryViewComponentTagHelper",
+        "AssemblyName": "PartsCatalog",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:cart-summary"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__CartSummaryViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "CartSummary"
+        }
+      },
+      {
         "HashCode": 899238057,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -15644,6 +15661,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Cart/Index.cshtml",
+      "TargetPath": "Views\\Cart\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/VerifyEmail.cshtml",
+      "TargetPath": "Views\\Account\\VerifyEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/RoleAdmin/Create.cshtml",
       "TargetPath": "Views\\RoleAdmin\\Create.cshtml",
       "FileKind": "mvc"
@@ -15719,13 +15746,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/ChangePassword.cshtml",
+      "TargetPath": "Views\\Account\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Shared/Components/CartSummary/Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\CartSummary\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/Views/Account/SendResetPassword.cshtml",
+      "TargetPath": "Views\\Account\\SendResetPassword.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -28,13 +28,17 @@
       <td>@item.Price</td>
       <td>@item.Category.Name</td>
       <td class="text-center">
-            <form asp-action="AddToCart" method="post">
-              <a asp-action="AddToCart" class="btn btn-sm btn-warning" asp-route-productId="@item.ProductId">
-                Edytuj
-              </a>
-            
+            <form id="@item.ProductId" asp-action="AddToCart" asp-controller="Cart" method="post">
+              <input type="hidden" asp-for="@item.ProductId" />
+              <input type="hidden" name="productId" value="@item.ProductId" />
+              <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+              
+                <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right" >
+                  Dodaj do koszyka
+                </button>
+              
             </form>
-            </td>
+        </td>
     </tr>
     }
     

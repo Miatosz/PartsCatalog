@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using PartsCatalog.Models.ViewModels;
 using PartsCatalog.Models;
 using System;
+using NETCore.MailKit.Core;
 
 
 namespace PartsCatalog.Controllers
@@ -18,9 +19,10 @@ namespace PartsCatalog.Controllers
         private IUserValidator<AppUser> userValidator;
         private IPasswordValidator<AppUser> passwordValidator;
         private IPasswordHasher<AppUser> passwordHasher;
+        private IEmailService emailService;
         public AccountController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userMgr, IUserValidator<AppUser> userValidator, 
                                     IPasswordValidator<AppUser> passwordValidator, SignInManager<AppUser> signInMgr, 
-                                    IPasswordHasher<AppUser> passwordHasher)
+                                    IPasswordHasher<AppUser> passwordHasher, IEmailService emailService)
         {
             userManager = userMgr;
             signInManager = signInMgr;
@@ -28,6 +30,8 @@ namespace PartsCatalog.Controllers
             this.passwordHasher = passwordHasher;
             this.passwordValidator = passwordValidator;
             this.userValidator = userValidator;
+            this.emailService = emailService;
+
         }
 
         private void AddErrorsFromResult(IdentityResult result)
@@ -57,14 +61,32 @@ namespace PartsCatalog.Controllers
             {
                 AppUser user = new AppUser
                 {
-                    UserName = model.Name,
-                    Email = model.Email
+                    UserName = model.Login,
+                    Email = model.Email,
+                    City = model.City,
+                    Country = model.Country,
+                    Line1 = model.Line1,
+                    Line2 = model.Line2,
+                    Name = model.Name,
+                    Surname = model.Surname,
+                    PhoneNumber = model.PhoneNumber,
+                    Zip = model.Zip,
+                    Street = model.Street
+
+
                 };
 
                 IdentityResult result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
+                    var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                    var link = Url.Action(nameof(VerifyEmail), "Account", new {userId = user.Id, code}, Request.Scheme, Request.Host.ToString());
+
+                    await emailService.SendAsync(user.Email, "email verify", $"<a href=\"{link}\">verify</a>", true);
+
+                    // emailService.Send("dzinzas12318@gmail.com", "ASP.NET Core mvc send email example", "Send from asp.net core mvc action");
                     return RedirectToAction("Login");
                 }
                 else
@@ -76,6 +98,87 @@ namespace PartsCatalog.Controllers
                 }
             }
             return View(model);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ViewResult SendResetPassword() => View();
+        
+
+        //wysłanie emaila z linkiem do metody resetujacej hasło
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> SendResetPassword(CreateModel model)
+        {
+            var user = await userManager.FindByNameAsync(model.Login);
+        
+            if (user == null) return BadRequest();
+
+            var x = await userManager.GeneratePasswordResetTokenAsync(user);
+
+            var link = Url.Action(nameof(ChangePassword), "Account", new {userId = user.Id, token = x}, Request.Scheme, Request.Host.ToString());
+
+            await emailService.SendAsync(user.Email, "password reset", $"<a href=\"{link}\">verify</a>", true);
+
+            return RedirectToAction("Login");
+            
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> VerifyEmail(string userId, string code)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+
+            if (user == null) return BadRequest();
+
+            var result = await userManager.ConfirmEmailAsync(user, code);
+
+            if (result.Succeeded)
+            {
+                return View();
+            }
+
+            return BadRequest();
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ViewResult ChangePassword(string userId, string token)
+        {
+            var model = new ResetPasswordModel {Token = token, UserId = userId};
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ResetPasswordModel model)
+        {
+            // var user = await userManager.FindByIdAsync(model.UserId);
+
+            // if (user == null) return BadRequest();
+
+            // user.PasswordHash = passwordHasher.HashPassword(user, model.Password);
+
+            // IdentityResult result = await userManager.UpdateAsync(user);
+
+            // return RedirectToAction("Login");
+             if (!ModelState.IsValid)
+                return View(model);
+            var user = await userManager.FindByIdAsync(model.UserId);
+            if (user == null)
+                RedirectToAction("Login");
+            var resetPassResult = await userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if(!resetPassResult.Succeeded)
+            {
+                foreach (var error in resetPassResult.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
+            return View();
+            }
+            return RedirectToAction("Login");
+            
         }
 
         [HttpPost]

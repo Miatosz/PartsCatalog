@@ -43,6 +43,7 @@ namespace PartsCatalog.Models
         [Display(Name = "telefon")]
         public string Telephone {get; set;}
 
-        public int? AccountId {get; set;}
+        // public int? AccountId {get; set;}
+        // public AppUser user {get; set;}
     }
 }
