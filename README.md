@@ -27,7 +27,7 @@ To open and run this project, follow this commands:
 
 Then you can open app in browser on port 5001(https://localhost:5001/)
 
-...or simply click here => pcpartsshop.azurewebsites.net
+...or simply click here => https://pcpartsshop.azurewebsites.net
 
 
 
