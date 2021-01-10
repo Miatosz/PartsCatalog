@@ -23,12 +23,6 @@
           "jQuery": "1.4.4"
         }
       },
-      "jQuery.Validation.Unobtrusive/2.0.20710": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.jQuery.Unobtrusive.Validation": "2.0.20613"
-        }
-      },
       "LocalDb/9.1.2": {
         "type": "package",
         "dependencies": {
@@ -451,7 +445,7 @@
           }
         }
       },
-      "Microsoft.Data.Sqlite.Core/5.0.1": {
+      "Microsoft.Data.Sqlite.Core/5.0.0": {
         "type": "package",
         "dependencies": {
           "SQLitePCLRaw.core": "2.0.4"
@@ -509,12 +503,12 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/5.0.1": {
+      "Microsoft.EntityFrameworkCore.Design/5.0.0": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.1"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.1/_._": {}
@@ -539,10 +533,10 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite/5.0.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "5.0.0",
           "SQLitePCLRaw.bundle_e_sqlite3": "2.0.4"
         },
         "compile": {
@@ -552,12 +546,12 @@
           "lib/netstandard2.1/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/5.0.1": {
+      "Microsoft.EntityFrameworkCore.Sqlite.Core/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "5.0.1",
+          "Microsoft.Data.Sqlite.Core": "5.0.0",
           "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
           "Microsoft.Extensions.DependencyModel": "5.0.0"
         },
         "compile": {
@@ -567,11 +561,11 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.1": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.1"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
@@ -805,12 +799,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
-        }
-      },
-      "Microsoft.jQuery.Unobtrusive.Validation/2.0.20710": {
-        "type": "package",
-        "dependencies": {
-          "jQuery.Validation": "[1.8.0, 2.0.0)"
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -2770,17 +2758,6 @@
         "jquery.validation.nuspec"
       ]
     },
-    "jQuery.Validation.Unobtrusive/2.0.20710": {
-      "sha512": "b+1siHUyEjSM3fnPKFO4f19+frMy9JCw2vcOo2LFXfhkw/KTO9qOroDNmpi6TJUYUGIkffgPkNB8IGtph1DTQg==",
-      "type": "package",
-      "path": "jquery.validation.unobtrusive/2.0.20710",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "jquery.validation.unobtrusive.2.0.20710.nupkg.sha512",
-        "jquery.validation.unobtrusive.nuspec"
-      ]
-    },
     "LocalDb/9.1.2": {
       "sha512": "wbVvzd3hnbQ0vce309ltn+KdN3gfIlrjvng6jZSe8PR4tbdC78d1fLbeYlzDC7OPsP2Lyzc9eSLiYsbt0gzISQ==",
       "type": "package",
@@ -3411,17 +3388,17 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.Data.Sqlite.Core/5.0.1": {
-      "sha512": "coC0Lo7PgP9d7XXBd/aYik/hNWTc4cJ+fzJqPgYXNVI1OlbwdrvM5vQWwS0edWsBNnWn0+qkKPN4rTtTiKxPhg==",
+    "Microsoft.Data.Sqlite.Core/5.0.0": {
+      "sha512": "O1PBB9Y9bU9Fb3FkewqeXzVJ3hI2DW9DtRGj7lGkT1FnP1B3kqjn3xpG2AaVzkv2MkzzKHNJAh+LQq3XaFcAMw==",
       "type": "package",
-      "path": "microsoft.data.sqlite.core/5.0.1",
+      "path": "microsoft.data.sqlite.core/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.0/Microsoft.Data.Sqlite.dll",
         "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
-        "microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
+        "microsoft.data.sqlite.core.5.0.0.nupkg.sha512",
         "microsoft.data.sqlite.core.nuspec"
       ]
     },
@@ -3487,10 +3464,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/5.0.1": {
-      "sha512": "+/dbnLFwIkjZMPl4cGUCBVL6pS9ZAJYrW6Bm/n0TlKWKiwZmd0f1b7XCeji4BPMHbvZl/CryTVQ2Ox4au7AKEw==",
+    "Microsoft.EntityFrameworkCore.Design/5.0.0": {
+      "sha512": "kyd66aJDTZjpo4awTpJb6BOVGnhS/pZgD3O2JH1A9QhtE+0kqEVXJLpNN9CPfbKWERipXAEUyUadPHNclZCc3g==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/5.0.1",
+      "path": "microsoft.entityframeworkcore.design/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3498,7 +3475,7 @@
         "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.5.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -3516,44 +3493,44 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Sqlite/5.0.1": {
-      "sha512": "4HJD3Uux59E7GHARkNMsCqFh/IDTtJUR1RXeSWRPF1tK7LGD5mR//PEMP+IJakNX1Dumar3uLdtKwGk6ateLHQ==",
+    "Microsoft.EntityFrameworkCore.Sqlite/5.0.0": {
+      "sha512": "xlpmIN768QlG1f0yzPQvqxfV+r7oIwid/ohosCdNeIf9MolAX97Bi517EQEL+AEU9cJaUx2GBrS3boWCNfe5tg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlite/5.0.1",
+      "path": "microsoft.entityframeworkcore.sqlite/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/_._",
-        "microsoft.entityframeworkcore.sqlite.5.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlite.5.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlite.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Sqlite.Core/5.0.1": {
-      "sha512": "+wuQrByixIpOHLfdpysddUel/5VE9z6+HKOYovY3wqppkOJw5/To/E4FrOmUZevrT7z9V9f6yO8cTiKGApxEhQ==",
+    "Microsoft.EntityFrameworkCore.Sqlite.Core/5.0.0": {
+      "sha512": "S5R5FvZ2ZDtHRHdPgHhz3JJqpzui1aGrFCUzelBFlPqiR7KO06Ew18X9KlK0Ur5hv4zuJ9hbXXBAgnuHf3aTHQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlite.core/5.0.1",
+      "path": "microsoft.entityframeworkcore.sqlite.core/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Sqlite.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Sqlite.xml",
-        "microsoft.entityframeworkcore.sqlite.core.5.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlite.core.5.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlite.core.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.1": {
-      "sha512": "FHo52VV2pvAJZBfNIYmre6MLe4LHTUZxMdmNJIOahcwdVpl2UG5YPEnI0qwKauan1PdJyPKmBsbLQvIEfvYLOQ==",
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.0": {
+      "sha512": "ChtvV0o7F1LsD1ek6pgADRJOzswf2YiPlqlEo0SZOfTp3daHgibp4JC9XXI/oXnQoUuRPuqMGtvgxuDXpr2xwQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.1",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.5.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -3961,19 +3938,6 @@
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
         "microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
-      ]
-    },
-    "Microsoft.jQuery.Unobtrusive.Validation/2.0.20710": {
-      "sha512": "8UaBqHLsvWMp6Y2wHvQUzfghI+CruAN3lmgojl/hKHTD4NddEFHN9g/Q2j6l5PgczPOBA6LHHC5CqMIKxPC/hg==",
-      "type": "package",
-      "path": "microsoft.jquery.unobtrusive.validation/2.0.20710",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Scripts/jquery.validate.unobtrusive.js",
-        "Content/Scripts/jquery.validate.unobtrusive.min.js",
-        "microsoft.jquery.unobtrusive.validation.2.0.20710.nupkg.sha512",
-        "microsoft.jquery.unobtrusive.validation.nuspec"
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
@@ -8832,37 +8796,38 @@
       "LocalDb >= 9.1.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.1",
       "Microsoft.EntityFrameworkCore >= 5.0.1",
-      "Microsoft.EntityFrameworkCore.Design >= 5.0.1",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.1",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.1",
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
+      "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools.DotNet >= 2.1.0-preview1-final",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.1",
       "NETCore.MailKit >= 2.0.3",
       "SendGrid >= 9.22.0",
       "jQuery >= 3.5.1",
-      "jQuery.Validation >= 1.19.2",
-      "jQuery.Validation.Unobtrusive >= 2.0.20710"
+      "jQuery.Validation >= 1.19.2"
     ]
   },
   "packageFolders": {
-    "/home/marcin/.nuget/packages/": {}
+    "C:\\Users\\asd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
+      "projectUniqueName": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
       "projectName": "PartsCatalog",
-      "projectPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
-      "packagesPath": "/home/marcin/.nuget/packages/",
-      "outputPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/obj/",
+      "projectPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
+      "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/marcin/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\asd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8901,15 +8866,15 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[5.0.1, )"
+            "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[5.0.1, )"
+            "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
-            "version": "[5.0.1, )"
+            "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Tools.DotNet": {
             "target": "Package",
@@ -8934,10 +8899,6 @@
           "jQuery.Validation": {
             "target": "Package",
             "version": "[1.19.2, )"
-          },
-          "jQuery.Validation.Unobtrusive": {
-            "target": "Package",
-            "version": "[2.0.20710, )"
           }
         },
         "imports": [
@@ -8958,20 +8919,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Element jQuery.Validation.Unobtrusive 2.0.20710 zależy od elementu Microsoft.jQuery.Unobtrusive.Validation (>= 2.0.20613), ale nie znaleziono elementu Microsoft.jQuery.Unobtrusive.Validation 2.0.20613. Najlepsze rozpoznane przybliżone dopasowanie to Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.",
-      "libraryId": "Microsoft.jQuery.Unobtrusive.Validation",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

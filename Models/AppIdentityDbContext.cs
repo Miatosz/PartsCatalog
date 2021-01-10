@@ -1,4 +1,4 @@
- using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,38 +10,45 @@ namespace PartsCatalog.Models
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser> {
 
-        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
-            : base(options) { }
+        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options) { }
 
-        public static async Task CreateAdminAccount(IServiceProvider serviceProvider,
-            IConfiguration configuration) {
-
-            UserManager<AppUser> userManager =
-                serviceProvider.GetRequiredService<UserManager<AppUser>>();
-            RoleManager<IdentityRole> roleManager =
-                serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
+            
+        public static async Task CreateAdminAccount(IServiceProvider serviceProvider, IConfiguration configuration)
+        {
+             Console.WriteLine(configuration["Data:AdminUser:Name"]);
+            UserManager<AppUser> userManager = serviceProvider.GetRequiredService<UserManager<AppUser>>();
+            RoleManager<IdentityRole> roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             string username = configuration["Data:AdminUser:Name"];
             string email = configuration["Data:AdminUser:Email"];
             string password = configuration["Data:AdminUser:Password"];
             string role = configuration["Data:AdminUser:Role"];
+            if (await userManager.FindByNameAsync(username) == null)
+            {
+                if (await roleManager.FindByNameAsync(role) == null)
+                {
+                               
 
-            if (await userManager.FindByNameAsync(username) == null) {
-                if (await roleManager.FindByNameAsync(role) == null) {
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
-
-                AppUser user = new AppUser {
+                AppUser user = new AppUser
+                {
                     UserName = username,
-                    Email = email
+                    Email = email,
+                    Name = "",
+                    Surname = "",
+                    Country = "",
+                    City = "",
+                    Street = "",
+                    Line1 = "",
+                    Zip = "",
+                    PhoneNumber = ""
                 };
-
-                IdentityResult result = await userManager
-                    .CreateAsync(user, password);
-                if (result.Succeeded) {
+                IdentityResult result = await userManager.CreateAsync(user, password);
+                if (result.Succeeded)
+                {
                     await userManager.AddToRoleAsync(user, role);
                 }
-            }
+            }            
         }
     }
 }

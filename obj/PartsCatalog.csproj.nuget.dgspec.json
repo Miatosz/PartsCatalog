@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj": {}
+    "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj": {}
   },
   "projects": {
-    "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj": {
+    "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
+        "projectUniqueName": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
         "projectName": "PartsCatalog",
-        "projectPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/PartsCatalog.csproj",
-        "packagesPath": "/home/marcin/.nuget/packages/",
-        "outputPath": "/home/marcin/Pulpit/Github/PartsCatalog/PartsCatalog/obj/",
+        "projectPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
+        "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/marcin/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\asd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,15 +60,15 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
@@ -91,10 +93,6 @@
             "jQuery.Validation": {
               "target": "Package",
               "version": "[1.19.2, )"
-            },
-            "jQuery.Validation.Unobtrusive": {
-              "target": "Package",
-              "version": "[2.0.20710, )"
             }
           },
           "imports": [
@@ -115,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

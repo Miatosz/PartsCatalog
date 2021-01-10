@@ -28,19 +28,22 @@ namespace PartsCatalog
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
-            // services.AddDbContext<ApplicationDbContext>(options =>
-            //     options.UseSqlServer(Configuration["Data:PartsCatalog:ConnectionString"]));         
-
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite("Data Source=baza.db"));      
+                options.UseSqlServer(Configuration["Data:PartsCatalog:ApplicationConnectionString"]));    
 
             services.AddDbContext<AppIdentityDbContext>(options =>
-                options.UseSqlite("Data Source=Identity.db")); 
+                options.UseSqlServer(Configuration["Data:PartsCatalog:AppIdentityConnectionString"]));       
+
+            // services.AddDbContext<ApplicationDbContext>(options =>
+            //     options.UseSqlite("Data Source=baza.db"));      
+
+            // services.AddDbContext<AppIdentityDbContext>(options =>
+            //     options.UseSqlite("Data Source=Identity.db")); 
 
             services.AddIdentity<AppUser, IdentityRole>(opts => 
             {
-                opts.SignIn.RequireConfirmedEmail = true;
-                opts.User.RequireUniqueEmail = true;
+                opts.SignIn.RequireConfirmedEmail = false;
+                opts.User.RequireUniqueEmail = false;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
                 opts.Password.RequiredLength = 6;
                 opts.Password.RequireNonAlphanumeric = false;
@@ -67,30 +70,30 @@ namespace PartsCatalog
             });
 
             services.AddMemoryCache();
-            services.AddSession();
-            
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromHours(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
 
             // services.AddMailKit(config => 
             //     config.UseMailKit(Configuration.GetSection("Email").Get<MailKitOptions>()));
             
             services.AddMailKit(optionBuilder =>
-    {
-        optionBuilder.UseMailKit(new MailKitOptions()
-        {
-            //get options from sercets.json
-            Server = Configuration["Email:Server"],
-            Port = Convert.ToInt32(Configuration["Email:Port"]),
-            SenderName = Configuration["Email:SenderName"],
-            SenderEmail = Configuration["Email:SenderEmail"],
-			
-            // can be optional with no authentication 
-            Account = Configuration["Email:Account"],
-            Password = Configuration["Email:Password"],
-            // enable ssl or tls
-            Security = true
-        });
-    });
+            {
+                optionBuilder.UseMailKit(new MailKitOptions()
+                {
+                    Server = Configuration["Email:Server"],
+                    Port = Convert.ToInt32(Configuration["Email:Port"]),
+                    SenderName = Configuration["Email:SenderName"],
+                    SenderEmail = Configuration["Email:SenderEmail"],
+                    Account = Configuration["Email:Account"],
+                    Password = Configuration["Email:Password"],
+                    Security = true
+                });
+            });
         }
 
 
@@ -134,8 +137,11 @@ namespace PartsCatalog
             // SaveContext.EnsurePopulated(app);
             ApplicationDbContext context = app.ApplicationServices
                 .GetRequiredService<ApplicationDbContext>();
+
+            AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+
             context.Database.Migrate();
-            //IdentitySeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
         }
         
     }
