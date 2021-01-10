@@ -87,6 +87,7 @@ namespace PartsCatalog.Controllers
                     await emailService.SendAsync(user.Email, "email verify", $"<a href=\"{link}\">verify</a>", true);
 
                     // emailService.Send("dzinzas12318@gmail.com", "ASP.NET Core mvc send email example", "Send from asp.net core mvc action");
+                    TempData["SignedIn"]= "We sent you confirmation mail";
                     return RedirectToAction("Login");
                 }
                 else

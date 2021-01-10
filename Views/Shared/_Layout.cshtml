@@ -8,7 +8,9 @@
 
 
 <link rel="stylesheet" href="/css/styles.css" asp-append-version="true" />
-
+<link rel="stylesheet" href="/css/modal.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
 .input-validation-error { border-color: red; background-color: #fee; }
 </style>
@@ -22,22 +24,44 @@
 
 
 
-<ul class="main-navigation">
+<ul  class="nav justify-content-end">
   
-  <ul class="nav justify-content-end">
-  <li style="margin-right: 1%;">
-    @if (User.Identity.IsAuthenticated)
+  
+
+
+  @* <li style=""><a href="#">@using (Html.BeginForm("Cart", "Index", FormMethod.Post))
+        {
+         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">Your cart</p></button></a>
+        }
+      </a>
+  </li>*@
+  <li>
+    <a style="text-align: right;" asp-action="Index" asp-controller="Cart">
+      <div style="font-size: 50px;">
+        <i style="margin-left: 0%;" class="fa fa-shopping-cart "></i>
+      </div>
+    </a>
+  
+  </li>
+  <li style="margin-right: 1%;"> 
+    
+
+  @if (User.Identity.IsAuthenticated)
     {
       <a style="text-align: right;" asp-action="Logout" asp-controller="Account">Wyloguj</a>
       <div ><small>Zalogowany jako: @User.Identity.Name</small></div>
-    } else
+    } 
+  else
     {
       <a  asp-action="Login" asp-controller="Account">Zaloguj</a>
     }
 
-    </li>
-  </ul>
+  </li>
+
 </ul>
+
+
+
 
       @* <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

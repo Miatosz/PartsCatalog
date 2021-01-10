@@ -1,0 +1,51 @@
+@model CheckoutViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Check out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    @* <div asp-validation-summary="All" class="text-danger"></div> *@
+
+    <form asp-action="Checkout" method="post">
+        <h3>Ship to</h3>
+        @* @foreach (AppUser person in Model.Users)
+        {
+            <th>@person.Name @person.Surname</th>
+            @* @if (person.Id == Model.Order.userId)
+                {
+                    <th>@person.Name @person.Surname</th>
+                    <th>@person.Email</th>
+                } *@
+         Imie i nazwisko: @Model.User.Name @Model.User.UserName <br>
+         Adres: @Model.User.Country @Model.User.City @Model.User.Street @Model.User.Line1 @Model.User.Zip <br>
+         Nr. Telefonu: @Model.User.PhoneNumber 
+
+        @* <input type="hidden" asp-for="Order" />
+        <input type="hidden" asp-for="User" /> *@
+        <input type="hidden" asp-for="Order" value="@Model.Order" />
+  
+        <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Complete Order" />
+        </div>
+    </form>
+}
+else
+{
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Checkout" method="post">
+    <h3>Podaj swoje dane</h3>
+    
+  
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>
+}
+

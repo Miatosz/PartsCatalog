@@ -1,0 +1,115 @@
+@model ListOrdersViewModel
+@{
+    ViewBag.Title = "Zamówienia";
+    Layout = "_AdminLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="/css/modal.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+
+
+@if (Model.Orders.Count() > 0)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Klient</th>
+            <th>Szczegóły klienta</th>
+            <th colspan="2">Opis</th>
+            <th></th></tr>
+        @foreach (Order o in Model.Orders)
+        {
+            <tr>
+                @foreach (var person in Model.Users)
+                {
+                    @if (person.Id == o.userId)
+                    {
+                        <th>@person.Name @person.Surname</th>
+                        <th>
+                            <button id="mod" class="btn btn-secondary">Details</button>
+                            
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>@person.Name @person.Surname <br>
+                                        @person.Country @person.City @person.Zip<br>
+                                        @person.Street @person.Line1 @if (@person.Line2 != null) { <text>/ @person.Line2</text>} <br>                                        
+                                        @person.Email @person.PhoneNumber
+                                    
+                                    </p>
+                                </div>
+                            </div>
+
+                        </th>
+                    }
+                }
+                <th>Produkt</th>
+                <th>Ilość</th>
+                <td>
+                    <form asp-action="MarkShipped" method="post">
+                        <input type="hidden" name="orderId" value="@o.OrderID" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Zrealizowane
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <i class="fas fa-shopping-cart"></i>
+            @foreach (CartLine line in o.Lines)
+            {
+                <tr>
+                    <td colspan="2"></td>
+                    <td>@line.Product.Name</td>
+                    <td>@line.Quantity</td>
+                    <td></td>
+                </tr>
+            }
+        }
+
+    </table>
+
+                    
+                            
+}
+else
+{
+    <div class="text-center">Brak niezrealizowanych zamówień</div>
+}
+
+
+<script>
+
+    'use strict';
+    
+    var modal = document.getElementById("myModal");
+
+    let btn = document.querySelectorAll('#mod');
+
+    var span = document.getElementsByClassName("close")[0];
+
+    const over = document.querySelector('#overSpan');
+
+    const openModal = function() 
+    {
+        modal.style.display = "block";
+    }
+
+    const closeModal = function() 
+    {
+        modal.style.display = "none";
+    }
+
+
+
+    btn.forEach(button => button.addEventListener('click', openModal));
+
+    span.addEventListener('click', closeModal); 
+
+    over.addEventListener('click', closeModal); 
+        
+console.log(btn);
+
+</script>

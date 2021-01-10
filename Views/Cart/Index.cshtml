@@ -44,5 +44,66 @@
     </tfoot>    
 </table>
 <div class="text-center">
-<a class="btn btn-primary" href="@Model.ReturnUrl">Kontynuuj zakupy</a>
+<a class="btn btn-primary" href="https://localhost:5001/User">Kontynuuj zakupy</a>
+@* <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout" >Przejdź do zamowienia</a> *@
+@if (User.Identity.IsAuthenticated)
+{
+    @if(@Model.Cart.Lines.Count() == 0)
+    {
+        <th>
+            <button id="mod" class="btn btn-secondary">Przejdź do zamowienia</button>
+                            
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+
+         </th>
+    }
+    else
+    {
+            <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout" >Przejdź do zamowienia</a>
+    }
+} else 
+{
+    <a class="btn btn-primary" asp-controller="Account" asp-action="Login" >Zaloguj</a>
+    @* <a class="btn btn-primary" asp-controller="Order" asp-action="CheckoutWithOutAccount" >Zamów bez logownia</a> *@
+}
 </div>
+
+
+<script>
+
+    'use strict';
+    
+    var modal = document.getElementById("myModal");
+
+    let btn = document.querySelectorAll('#mod');
+
+    var span = document.getElementsByClassName("close")[0];
+
+    const over = document.querySelector('#overSpan');
+
+    const openModal = function() 
+    {
+        modal.style.display = "block";
+    }
+
+    const closeModal = function() 
+    {
+        modal.style.display = "none";
+    }
+
+
+
+    btn.forEach(button => button.addEventListener('click', openModal));
+
+    span.addEventListener('click', closeModal); 
+
+    over.addEventListener('click', closeModal); 
+        
+console.log(btn);
+
+</script>

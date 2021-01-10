@@ -28,7 +28,8 @@ namespace PartsCatalog.Controllers
         }
 
         public ViewResult ListProducts() 
-            => View(productRepository.Products.Include(c => c.Category));
+            => View(productRepository.Products
+                                            .Include(c => c.Category));
             // {
             //     Products = productRepository.Products
             // });

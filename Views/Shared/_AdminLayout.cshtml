@@ -22,8 +22,8 @@
 
 
 <ul class="main-navigation">
-  <li><a href="#">Home</a></li>
-  <li style="margin-bottom: 0%;"><a href="">Products</a>
+ 
+  <li style="margin-bottom: 0%;"><a href="https://localhost:5001/Admin/AdminHomePage">Products</a>
     <ul>
       <li>
         @using (Html.BeginForm("AdminHomePage", "Admin", FormMethod.Post))
@@ -90,19 +90,19 @@
     </ul>
   </li>
   <li><a href="">Orders
-    @using (Html.BeginForm("ListOrders", "Admin", FormMethod.Post))
+    @using (Html.BeginForm("List", "Order", FormMethod.Post))
         {
           <button type="submit" style="background:transparent; border:none; color:transparent;" ></button>  
         }
   </a>
     <ul>
-      <li><a href="">List
-        @using (Html.BeginForm("ListOrders", "Admin", FormMethod.Post))
+     <li>
+        @using (Html.BeginForm("List", "Order", FormMethod.Post))
         {
-          <button type="submit" style="background:transparent; border:none; color:transparent;" ></button>  
+         <a><button type="submit" style="border:none; background:transparent;"><p style="color:white">List orders</p></button></a>
         }
-      </a></li>
-      <li><a href="">Add </a></li>
+      </li>
+      
     </ul>
   </li>
   <ul class="nav justify-content-end">
@@ -134,7 +134,7 @@
   </div>
 }
 
-<div style="margin-left:1%;margin-right:1%; margin-top:2%;">
+<div style="margin-left:1%;margin-right:1%; margin-top:2%;" >
 
 @if (TempData["message"] != null) {
   <div class="alert alert-success mt-1">@TempData["message"]</div>

@@ -93,9 +93,9 @@ namespace PartsCatalog.Controllers
         {
             if (productRepository.Products
                 .FirstOrDefault(p => p.ProductId == productId) != null)
-                {
-                    productRepository.DeleteProduct(productId);
-                }
+            {
+                productRepository.DeleteProduct(productId);
+            }
             //Product deletedProduct = productRepository.DeleteProduct(productId);
             return RedirectToAction("AdminHomePage");
         }

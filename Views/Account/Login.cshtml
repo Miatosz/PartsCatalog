@@ -35,9 +35,11 @@
 
 <main class="form-signin">
 
-  @if (TempData["message"] != null) {
-<div class="alert alert-success mt-1">@TempData["message"]</div>
+@if (TempData["SignedIn"] != null) 
+{
+  <div id="mydiv" class="alert alert-success mt-1">@TempData["SignedIn"]</div>
 }
+
 <div class="text-danger" asp-validation-summary="All"></div>
 
 
@@ -57,6 +59,15 @@
     <a style="margin-right: 0%;" asp-action="SignIn" class="btn btn-secondary">Sign in</a>
 </form>
 
+<script>
+  setTimeout(fade_out, 5000);
+
+
+var fade_out = function() {
+  $("#mydiv").fadeOut().empty();
+  $TempData["SignedIn"] = null;
+}
+</script>
 
 @* <form asp-action="Login" asp-controller="Account" method="post">
   <input type="hidden" asp-for="returnUrl" value="@ViewBag.returnUrl" />

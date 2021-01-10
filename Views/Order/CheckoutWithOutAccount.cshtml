@@ -1,0 +1,73 @@
+@model CheckoutViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Check out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+
+    <form asp-action="CheckoutWithOutAccount" method="post">
+    <h3>Podaj swoje dane</h3>
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+    <div class="form-group">
+        <label asp-for="User.Name">Name</label>
+        <div><span asp-validation-for="User.Name" class="text-danger"></span></div>
+        <input asp-for="User.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Surname">Surname</label>
+        <div><span asp-validation-for="User.Surname" class="text-danger"></span></div>
+        <input asp-for="User.Surname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Country">Country</label>
+        <div><span asp-validation-for="User.Country" class="text-danger"></span></div>
+        <input asp-for="User.Country" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.City">City</label>
+        <div><span asp-validation-for="User.City" class="text-danger"></span></div>
+        <input asp-for="User.City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Street">Street</label>
+        <div><span asp-validation-for="User.Street" class="text-danger"></span></div>
+        <input asp-for="User.Street" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Line1">Home</label>
+        <div><span asp-validation-for="User.Line1" class="text-danger"></span></div>
+        <input asp-for="User.Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Line2">Flat</label>
+        <div><span asp-validation-for="User.Line2" class="text-danger"></span></div>
+        <input asp-for="User.Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Zip">Zip</label>
+        <div><span asp-validation-for="User.Zip" class="text-danger"></span></div>
+        <input asp-for="User.Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.PhoneNumber">PhoneNumber</label>
+        <div><span asp-validation-for="User.PhoneNumber" class="text-danger"></span></div>
+        <input asp-for="User.PhoneNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Email">Email</label>
+        <div><span asp-validation-for="User.Email" class="text-danger"></span></div>
+        <input asp-for="User.Email" class="form-control" />
+    </div>
+      
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>
+
