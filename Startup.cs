@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using PartsCatalog.Models;
-using PartsCatalog.Models.Repositories;
+using PartsCatalog.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using NETCore.MailKit.Extensions;
@@ -13,6 +13,7 @@ using System;
 using System.Net;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using PartsCatalog.Data;
 
 namespace PartsCatalog
 {
@@ -59,7 +60,7 @@ namespace PartsCatalog
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IClientRepository, ClientRepository>();
-
+            services.AddTransient<IOrderRepository, OrderRepository>();
             
             services.AddMemoryCache();
             services.AddSession();

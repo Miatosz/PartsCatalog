@@ -15,6 +15,6 @@ namespace PartsCatalog.Models
         [BindNever]
         public bool Shipped {get; set;}
         
-        public Client Client { get; set; }
+        public string userId {get; set;}
     }
 }

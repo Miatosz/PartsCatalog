@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PartsCatalog.Models;
+using PartsCatalog.Data;
 
 namespace PartsCatalog.Migrations
 {
@@ -114,15 +115,13 @@ namespace PartsCatalog.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("ClientId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Shipped")
                         .HasColumnType("bit");
 
-                    b.HasKey("OrderID");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ClientId");
+                    b.HasKey("OrderID");
 
                     b.ToTable("Orders");
                 });
@@ -166,15 +165,6 @@ namespace PartsCatalog.Migrations
                         .HasForeignKey("ProductId");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("PartsCatalog.Models.Order", b =>
-                {
-                    b.HasOne("PartsCatalog.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId");
-
-                    b.Navigation("Client");
                 });
 
             modelBuilder.Entity("PartsCatalog.Models.Product", b =>

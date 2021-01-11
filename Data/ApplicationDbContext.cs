@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
+using PartsCatalog.Models;
 
-namespace PartsCatalog.Models
+namespace PartsCatalog.Data
 {
     public class ApplicationDbContext : DbContext
     {

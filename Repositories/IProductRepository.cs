@@ -1,6 +1,8 @@
 using System.Linq;
-namespace PartsCatalog.Models.Repositories
-{
+using PartsCatalog.Data;
+using PartsCatalog.Models;
+
+namespace PartsCatalog.Repositories{
     public interface IProductRepository
     {
          IQueryable<Product> Products {get;}

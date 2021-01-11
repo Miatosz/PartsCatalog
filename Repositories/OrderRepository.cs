@@ -1,8 +1,9 @@
 using System.Linq;
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using PartsCatalog.Data;
+using PartsCatalog.Models;
 
-namespace PartsCatalog.Models.Repositories
-{
+namespace PartsCatalog.Repositories{
     public class OrderRepository : IOrderRepository
     {
         private ApplicationDbContext context;

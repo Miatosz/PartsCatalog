@@ -4,9 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using PartsCatalog.Models;
 using System.Threading.Tasks;
 
-namespace PartsCatalog.Models
+namespace PartsCatalog.Data
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser> {
 

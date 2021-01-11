@@ -9,12 +9,13 @@ using System;
 namespace PartsCatalog.Infrastructure {
 
     [HtmlTargetElement("td", Attributes = "identity-role")]
-    public class RoleUsersTagHelper : TagHelper {
+    public class RoleUsersTagHelper : TagHelper 
+    {
         private UserManager<AppUser> userManager;
         private RoleManager<IdentityRole> roleManager;
 
-        public RoleUsersTagHelper(UserManager<AppUser> usermgr,
-                                  RoleManager<IdentityRole> rolemgr) {
+        public RoleUsersTagHelper(UserManager<AppUser> usermgr, RoleManager<IdentityRole> rolemgr) 
+        {
             userManager = usermgr;
             roleManager = rolemgr;
         }

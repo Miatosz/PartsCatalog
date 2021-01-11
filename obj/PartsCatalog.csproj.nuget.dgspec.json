@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj": {}
+    "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\PartsCatalog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj": {
+    "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\PartsCatalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
+        "projectUniqueName": "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\PartsCatalog.csproj",
         "projectName": "PartsCatalog",
-        "projectPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
+        "projectPath": "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\PartsCatalog.csproj",
         "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\obj\\",
+        "outputPath": "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asd\\AppData\\Roaming\\NuGet\\NuGet.Config",

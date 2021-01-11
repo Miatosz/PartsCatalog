@@ -4,7 +4,7 @@ using PartsCatalog.Models;
 using System.Linq;
 using PartsCatalog.Infrastructure;
 using PartsCatalog.Models.ViewModels;
-using PartsCatalog.Models.Repositories;
+using PartsCatalog.Repositories;
 
 
 namespace SportsStore.Controllers

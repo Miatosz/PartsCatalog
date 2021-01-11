@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PartsCatalog.Models;
 using System.Linq;
-using PartsCatalog.Models.Repositories;
+using PartsCatalog.Repositories;
 using PartsCatalog.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
-
+using PartsCatalog.Data;
 
 namespace PartsCatalog.Controllers
 {

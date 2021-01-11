@@ -1,7 +1,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PartsCatalog.Models;
-using PartsCatalog.Models.Repositories;
+using PartsCatalog.Repositories;
 using PartsCatalog.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 

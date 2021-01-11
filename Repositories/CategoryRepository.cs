@@ -1,7 +1,9 @@
 using System.Linq;
 using System;
+using PartsCatalog.Data;
+using PartsCatalog.Models;
 
-namespace PartsCatalog.Models.Repositories
+namespace PartsCatalog.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {

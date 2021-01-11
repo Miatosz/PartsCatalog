@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FgHsg9c99KkMsAdUoeKIHM1UAlMjeWKtXi00zXAmUyvsV9d8/uj8dvC1O3Pnm7DBWQTrmUbMAJjuIYET2QILbQ==",
+  "dgSpecHash": "7B381ehSP2oadd9LSmw6aDjNi10Vm8v+GauZLbqJ6FpowjfFMmi7+s3OtkmIlKn6kMLCfGpa108lGODWTM7Xgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asd\\Desktop\\projekt\\PartsCatalog\\PartsCatalog.csproj",
+  "projectFilePath": "C:\\Users\\asd\\Desktop\\projekt\\2\\PartsCatalog\\PartsCatalog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asd\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\asd\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

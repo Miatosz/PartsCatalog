@@ -1,7 +1,8 @@
 using System.Linq;
+using PartsCatalog.Data;
+using PartsCatalog.Models;
 
-namespace PartsCatalog.Models.Repositories
-{
+namespace PartsCatalog.Repositories{
     public interface IOrderRepository
     {
          IQueryable<Order> Orders {get;}

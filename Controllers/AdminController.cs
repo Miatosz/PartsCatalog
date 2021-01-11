@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using PartsCatalog.Models;
-using PartsCatalog.Models.Repositories;
+using PartsCatalog.Repositories;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
+using PartsCatalog.Data;
 
 namespace PartsCatalog.Controllers
 {
