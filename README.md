@@ -1,30 +1,44 @@
 # Pc parts shop app
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Features](#features)
 * [Setup](#setup)
 * [Author](#author)
 * [Screenshots](#screenshots)
 
+--- 
+
 ## General info
-**This project is a Pc parts shop app  created with .Net core**
+**An ASP.NET Core application for cataloging and managing spare parts. This project provides a searchable catalog of spare parts, allowing CRUD operations and simple administrative management.**
+
+---
 
 ## Technologies
 Project is created with:
-* .Net 5.0
+* ASP.NET Core MVC
 * Entity Framework Core
-* ASP.NET Core Identity
-* Sqlite Database
-* Asp.Net Core
+* SQL Server
 * Bootstrap
 * Azure
 
+---
+ 
+## Features
+- List of parts with search functionality
+- Add, edit, delete items
+- Simple admin panel for management
+
+---
+
 ## Setup
 To open and run this project, follow this commands:
+```bash
 1. git clone https://github.com/Miatosz/PartsCatalog.git
 2. cd .\PartsCatalog\
 3. dotnet run
-
+```
 Then you can open app in browser on port 5001(https://localhost:5001/)
 
 ...or simply click here => https://pcpartsshop.azurewebsites.net
