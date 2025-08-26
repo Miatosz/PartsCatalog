@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
+* [CI/CD](#cicd)
 * [Setup](#setup)
 * [Author](#author)
 * [Screenshots](#screenshots)
@@ -29,6 +30,11 @@ Project is created with:
 - List of parts with search functionality
 - Add, edit, delete items
 - Simple admin panel for management
+
+---
+
+## CI/CD
+This project includes a GitHub Actions workflow that automatically builds the project and runs tests on each push or pull request.
 
 ---
 
